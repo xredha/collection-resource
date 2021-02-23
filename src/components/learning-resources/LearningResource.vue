@@ -2,8 +2,8 @@
   <li>
     <base-card>
       <div id="title">
-        <h1>{{ title }}</h1>
-        <button>Delete</button>
+        <h3>{{ title }}</h3>
+        <base-button mode="flat">Delete</base-button>
       </div>
       <p>{{ desc }}</p>
       <p><a :href="link" target="_blank">View Resource</a></p>
