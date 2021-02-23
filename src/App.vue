@@ -1,13 +1,22 @@
 <template>
+  <the-header :title="'Collection Resource'"></the-header>
   <stored-resource :resources="storedResource"></stored-resource>
+  <the-footer
+    :contribute="'Galih Redha Saputra'"
+    :link="'https://github.com/xredha'"
+  ></the-footer>
 </template>
 
 <script>
+import TheHeader from "./components/layouts/TheHeader.vue";
 import StoredResource from "./components/learning-resources/StoredResource.vue";
+import TheFooter from "./components/layouts/TheFooter.vue";
 
 export default {
   components: {
+    TheHeader,
     StoredResource,
+    TheFooter,
   },
   data() {
     return {

@@ -28,5 +28,6 @@ ul {
   padding: 0;
   margin: auto;
   max-width: 40rem;
+  min-height: 80vh;
 }
 </style>
