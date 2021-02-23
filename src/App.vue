@@ -1,6 +1,6 @@
 <template>
   <the-header :title="'Collection Resource'"></the-header>
-  <stored-resource :resources="storedResource"></stored-resource>
+  <the-resources></the-resources>
   <the-footer
     :contribute="'Galih Redha Saputra'"
     :link="'https://github.com/xredha'"
@@ -9,32 +9,14 @@
 
 <script>
 import TheHeader from "./components/layouts/TheHeader.vue";
-import StoredResource from "./components/learning-resources/StoredResource.vue";
+import TheResources from './components/learning-resources/TheResources.vue';
 import TheFooter from "./components/layouts/TheFooter.vue";
 
 export default {
   components: {
     TheHeader,
-    StoredResource,
+    TheResources,
     TheFooter,
-  },
-  data() {
-    return {
-      storedResource: [
-        {
-          id: "official-guide",
-          title: "Official Guide",
-          desc: "You must learn Vue JS in this website",
-          link: "https://vuejs.org/",
-        },
-        {
-          id: "google",
-          title: "Google",
-          desc: "Learn programming in Google",
-          link: "https://google.com/",
-        },
-      ],
-    };
   },
 };
 </script>
