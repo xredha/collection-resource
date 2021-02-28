@@ -1,19 +1,21 @@
 <template>
-  <base-card>
-    <base-button
-      @click="setSelectedComponent('stored-resource')"
-      :mode="onSelectedTab('stored-resource')"
-      >Stored Resource</base-button
-    >
-    <base-button
-      @click="setSelectedComponent('add-resource')"
-      :mode="onSelectedTab('add-resource')"
-      >Add Resource</base-button
-    >
-  </base-card>
-  <keep-alive>
-    <component :is="selectedComponent"></component>
-  </keep-alive>
+  <div id="the-resource">
+    <base-card>
+      <base-button
+        @click="setSelectedComponent('stored-resource')"
+        :mode="onSelectedTab('stored-resource')"
+        >Stored Resource</base-button
+      >
+      <base-button
+        @click="setSelectedComponent('add-resource')"
+        :mode="onSelectedTab('add-resource')"
+        >Add Resource</base-button
+      >
+    </base-card>
+    <keep-alive>
+      <component :is="selectedComponent"></component>
+    </keep-alive>
+  </div>
 </template>
 
 <script>
@@ -61,15 +63,23 @@ export default {
       this.storedResource.unshift(newResource);
       this.selectedComponent = "stored-resource";
     },
+    deleteResource(id) {
+      const indexResource = this.storedResource.findIndex(rsc => rsc.id === id);
+      this.storedResource.splice(indexResource, 1);
+    },
   },
   provide() {
     return {
       resources: this.storedResource,
       addResource: this.addResource,
+      deleteResource: this.deleteResource,
     };
   },
 };
 </script>
 
 <style scoped>
+#the-resource {
+  min-height: 80vh;
+}
 </style>

@@ -2,7 +2,8 @@
   <ul>
     <learning-resource
       v-for="rsc in resources"
-      :key="rsc"
+      :key="rsc.id"
+      :id="rsc.id"
       :title="rsc.title"
       :desc="rsc.desc"
       :link="rsc.link"
@@ -28,6 +29,5 @@ ul {
   padding: 0;
   margin: auto;
   max-width: 40rem;
-  min-height: 80vh;
 }
 </style>
